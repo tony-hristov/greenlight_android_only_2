@@ -20,7 +20,7 @@ dependencyResolutionManagement {
             url "https://dl.cloudsmith.io/DisKsZFvs1ikaJJc/alkami/vendor/maven/"
             credentials {
                 username = "USERNAME"
-                password = "06731e..."
+                password = System.getenv("CLOUDSMITH_API_KEY")
             }
         }
     }
