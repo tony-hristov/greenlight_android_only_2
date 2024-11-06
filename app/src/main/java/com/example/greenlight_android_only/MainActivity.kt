@@ -12,9 +12,12 @@ import androidx.core.view.WindowInsetsCompat
 import me.greenlight.partner.GreenlightSDK
 import me.greenlight.partner.GreenlightSDKConfiguration
 import me.greenlight.partner.GreenlightSDKEnvironment
+import me.greenlight.partner.theming.CardType
 import me.greenlight.partner.theming.GreenlightSDKColors
 import me.greenlight.partner.theming.GreenlightSDKComposeColors
+import me.greenlight.partner.theming.GreenlightSDKDashboardCustomization
 import me.greenlight.partner.theming.GreenlightSDKTheme
+import me.greenlight.partner.theming.GreenlightSDKThemeCustomization
 import me.greenlight.partner.theming.defaultGreenlightSDKLightColors
 import me.greenlight.partner.theming.defaultGreenlightSDKShapes
 
@@ -43,7 +46,13 @@ class MainActivity : AppCompatActivity() {
                             light = getLightThemeColors()
                         ),
                         shapes = defaultGreenlightSDKShapes(),
-                    )
+                        customization = GreenlightSDKThemeCustomization().copy(
+                            dashboard = GreenlightSDKDashboardCustomization().copy(
+                                cardType = CardType.Outlined
+                            )
+                        )
+                    ),
+
                 )
             GreenlightSDK.init(configuration, context = applicationContext)
             GreenlightSDK.launchChildDashboard(this, Constants.FAMILY_ID, Constants.CHILD_ID)

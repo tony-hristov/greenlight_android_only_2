@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.greenlight_android_only"
-        minSdk 31
+        minSdk 28
         // targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -37,7 +37,7 @@ android {
 
 dependencies {
     implementation libs.org.jetbrains.kotlin.stdlib.jdk7
-    implementation "me.greenlight:partner:2.2.2"
+    implementation "me.greenlight:partner:2.2.3"
 
     implementation platform(libs.androidx.compose.bom)
     implementation "androidx.compose.runtime:runtime"
